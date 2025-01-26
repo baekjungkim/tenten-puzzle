@@ -32,7 +32,7 @@
 
 ## 🚀 플레이하기
 
-[텐텐 퍼즐 게임 시작하기](https://baekjungkim.github.io/tenten-puzzle)
+[텐텐 퍼즐 게임 시작하기](https://tenten-puzzle.vercel.app/)
 
 ## 💻 로컬에서 실행하기
 

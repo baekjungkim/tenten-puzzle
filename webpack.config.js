@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -6,14 +7,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 use: 'ts-loader',
                 exclude: /node_modules/,
             },
         ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.ts', '.js'],
     },
     output: {
         filename: 'bundle.js',
@@ -28,4 +29,13 @@ module.exports = {
         port: 9000,
         hot: true
     },
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                { from: 'index.html', to: '.' },
+                { from: 'assets', to: 'assets' },
+                { from: 'sitemap.xml', to: '.' },
+            ],
+        }),
+    ],
 }; 
