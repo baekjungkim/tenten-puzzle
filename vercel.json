@@ -9,12 +9,20 @@
   ],
   "routes": [
     {
+      "src": "/bundle.js",
+      "dest": "/bundle.js"
+    },
+    {
+      "src": "/styles.css",
+      "dest": "/styles.css"
+    },
+    {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     },
     {
-      "src": "/dist/(.*)",
-      "dest": "/dist/$1"
+      "src": "/sitemap.xml",
+      "dest": "/sitemap.xml"
     },
     {
       "src": "/(.*)",
