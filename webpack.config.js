@@ -1,8 +1,12 @@
-const path = require('path');
-const CopyPlugin = require('copy-webpack-plugin');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import CopyPlugin from 'copy-webpack-plugin';
 
-module.exports = {
-  mode: 'development',
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: './src/index.ts',
   module: {
     rules: [
@@ -20,6 +24,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
+    clean: true,
   },
   devServer: {
     static: {
