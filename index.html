@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO 메타 태그 -->
+    <title>텐텐 퍼즐 - 숫자 매칭 퍼즐 게임</title>
+    <meta
+      name="description"
+      content="숫자를 매칭하여 10을 만들거나 같은 숫자를 연결하는 퍼즐 게임입니다. 2분 동안 최대한 많은 점수를 획득하세요!"
+    />
+    <meta
+      name="keywords"
+      content="텐텐 퍼즐, 숫자 퍼즐, 브라우저 게임, 캐주얼 게임, 매칭 게임, 숫자 매칭, 사과 게임"
+    />
+
+    <!-- Open Graph 태그 (소셜 미디어 공유용) -->
+    <meta property="og:title" content="텐텐 퍼즐 - 숫자 매칭 퍼즐 게임" />
+    <meta
+      property="og:description"
+      content="숫자를 매칭하여 10을 만들거나 같은 숫자를 연결하는 퍼즐 게임입니다. 2분 동안 최대한 많은 점수를 획득하세요!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://baekjungkim.github.io/tenten-puzzle" />
+
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  </head>
+  <body>
+    <main class="game-container">
+      <!-- 시작 화면 -->
+      <section id="startScreen" class="start-screen">
+        <header class="game-info">
+          <h1>텐텐 퍼즐</h1>
+          <ul class="rules">
+            <li>
+              <strong>기본 규칙</strong>
+              마우스로 드래그하여 숫자들을 선택하세요
+            </li>
+            <li>
+              <strong>점수 획득</strong>
+              선택한 숫자들의 합이 10이 되거나<br />동일한 숫자들을 선택하면 점수를 얻습니다
+            </li>
+            <li>
+              <strong>제한 시간</strong>
+              120초 안에 최대한 많은 점수를 획득하세요
+            </li>
+          </ul>
+          <button id="startButton" class="start-button">게임 시작</button>
+        </header>
+      </section>
+
+      <!-- 게임 화면 -->
+      <section id="gameScreen" class="game-screen">
+        <div class="controls">
+          <div class="left-controls">
+            <div class="bgm-control">
+              <label class="bgm-checkbox">
+                <input type="checkbox" id="bgmToggle" checked />
+                <span>BGM</span>
+              </label>
+              <input
+                type="range"
+                id="bgmVolume"
+                min="0"
+                max="100"
+                value="50"
+                class="volume-slider"
+              />
+            </div>
+          </div>
+          <div class="score-timer">
+            <span id="score">점수: 0</span>
+            <span id="timer">120초</span>
+          </div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="game-controls">
+          <div class="left-controls">
+            <button id="cancelBtn" class="control-btn cancel-btn">취소</button>
+            <button id="restartBtn" class="control-btn restart-btn">재시작</button>
+          </div>
+          <div class="right-controls">
+            <button id="shuffleBtn" class="control-btn shuffle-btn">재정렬</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 게임 오버 화면 -->
+      <section id="gameOver" class="game-over">
+        <h2>게임 종료!</h2>
+        <div class="score-display">Score <span id="finalScore">0</span></div>
+        <div class="game-over-buttons">
+          <button id="restartFromOver" class="control-btn restart-btn">재시작</button>
+          <button id="homeFromOver" class="control-btn cancel-btn">처음으로</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- 구조화된 데이터 추가 -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Game",
+        "name": "텐텐 퍼즐",
+        "description": "숫자를 매칭하여 10을 만들거나 같은 숫자를 연결하는 퍼즐 게임",
+        "genre": ["퍼즐", "캐주얼"],
+        "gamePlatform": "웹 브라우저",
+        "applicationCategory": "게임"
+      }
+    </script>
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>
