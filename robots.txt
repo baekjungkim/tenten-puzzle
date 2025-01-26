@@ -1,2 +1,12 @@
 User-agent: *
-Allow: / 
+Allow: /
+
+# Naver Search Engine
+User-agent: Yeti
+Allow: /
+
+# Google Search Engine
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://tenten-puzzle.vercel.app/sitemap.xml 
