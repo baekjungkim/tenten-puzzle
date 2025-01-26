@@ -1,4 +1,5 @@
-export default {
+/* global module */
+module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'prettier'],
   extends: [
@@ -9,6 +10,7 @@ export default {
   env: {
     browser: true,
     es6: true,
+    node: true,
   },
   rules: {
     'prettier/prettier': 'error',
