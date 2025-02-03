@@ -1,6 +1,6 @@
+import CopyPlugin from 'copy-webpack-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import CopyPlugin from 'copy-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -41,6 +41,7 @@ export default {
         { from: 'assets', to: 'assets' },
         { from: 'sitemap.xml', to: '.' },
         { from: 'src/styles.css', to: 'styles.css' },
+        { from: 'ads.txt', to: 'ads.txt' },
       ],
     }),
   ],
