@@ -25,6 +25,10 @@
       "dest": "/sitemap.xml"
     },
     {
+      "src": "/ads.txt",
+      "dest": "/ads.txt"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
